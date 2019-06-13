@@ -27,7 +27,7 @@ class TasksController < ApplicationController
   end
 
   def edit
-      @task = Tawk.find(params[:id])
+      @task = Task.find(params[:id])
   end
 
   def update
@@ -55,6 +55,6 @@ class TasksController < ApplicationController
 
   # Strong Parameter
   def task_params
-    params.require(:task).permit(:content)
+    params.require(:task).permit(:content, :title)
   end
 end
